@@ -8,8 +8,8 @@ import os
 import time
 
 # API key and email
-Entrez.api_key = ""
-Entrez.email = ""
+Entrez.api_key = "a8aede67e0cd7c376dc7b0dbb1102fd5f509"
+Entrez.email = "harshilsavani326@gmail.com"
 
 # Output directory
 download_dir = "ncbi_genomes_gbff"
