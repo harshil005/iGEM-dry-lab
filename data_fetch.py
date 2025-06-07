@@ -6,10 +6,12 @@ Download  genome assemblies for all 32 strains via the NCBI Datasets CLI.
 from Bio import Entrez
 import os
 import time
+from dotenv import load_dotenv
 
 # API key and email
-Entrez.api_key = "a8aede67e0cd7c376dc7b0dbb1102fd5f509"
-Entrez.email = "harshilsavani326@gmail.com"
+load_dotenv()
+Entrez.api_key = os.getenv('API_KEY')
+Entrez.email = os.getenv('EMAIL')
 
 # Output directory
 download_dir = "ncbi_genomes_gbff"
