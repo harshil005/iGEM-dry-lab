@@ -4,7 +4,7 @@ from Bio import SeqIO
 from pathlib import Path
 from tqdm import tqdm
 
-#change to esm2 when more power
+#change to esm2_t48_15B_UR50D() when more power
 #handle sequence cap of 1024
 
 model_name = "esm1b_t33_650M_UR50S"

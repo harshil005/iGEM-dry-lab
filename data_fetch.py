@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Download  genome assemblies for all 32 strains via the NCBI Datasets CLI.
+Download  genome assemblies for strains via the NCBI API.
 """
 
 from Bio import Entrez
