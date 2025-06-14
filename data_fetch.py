@@ -24,7 +24,7 @@ assemblies = [
     "GCF_025147765.1",  # Blautia obeum DSM 25238 // ATCC 29174
     "GCF_025148445.1",  # Butyrivibrio crossotus DSM 2876
     "GCF_000932055.2",  # Clostridium difficile DSM 27543 // 630
-#    "GCF_000172615.1",  # Clostridium hylemonae
+    "GCF_022845755.1",  # Clostridium hylemonae
 #    "GCF_000024105.1",  # Clostridium perfringens
     "GCF_014131695.1",  # Clostridium ramosum DSM 1402
 #    "GCF_000156295.1",  # Clostridium scindens

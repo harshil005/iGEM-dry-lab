@@ -20,7 +20,7 @@ output_dir = Path("esm_embeddings")
 output_dir.mkdir(exist_ok=True)
 
 
-BATCH_SIZE = 8  #increase when using longleaf
+BATCH_SIZE = 8  #decrease when using stronger model/larger sequences
 
 
 for fasta_file in input_dir.glob("*.faa"):
