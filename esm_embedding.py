@@ -39,6 +39,8 @@ for fasta_file in input_dir.glob("*.faa"):
 
             #
             results = model(batch_tokens, repr_layers=[33], return_contacts=False)
+            attn = results["attentions"]
+
             token_representations = results["representations"][33]
 
             for j, (label, seq) in enumerate(batch):
