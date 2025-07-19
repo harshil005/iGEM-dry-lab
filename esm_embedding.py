@@ -63,3 +63,9 @@ for fasta_file in input_dir.glob("*.faa"):
     pca_result = pca.fit_transform(matrix)
 
     print(pca.explained_variance_ratio_.cumsum())
+
+    import pandas as pd
+
+    df = pd.DataFrame(pca_result, index=labels)
+    df.to_csv("pca_results.csv")
+
