@@ -3,6 +3,8 @@ import esm
 from Bio import SeqIO
 from pathlib import Path
 from tqdm import tqdm
+from sklearn.decomposition import PCA
+
 
 #change to esm2_t48_15B_UR50D() when more power
 #handle sequence cap of 1024
@@ -53,3 +55,11 @@ for fasta_file in input_dir.glob("*.faa"):
     output_file = output_dir / f"{fasta_file.stem}_esm1b_embeddings.pt"
     torch.save(embeddings, output_file)
     print(f"embeddings in {output_file}")
+
+    labels = list(embeddings.keys())
+    matrix = torch.stack([embeddings[label] for label in labels]).numpy()
+
+    pca = PCA(n_components=128)
+    pca_result = pca.fit_transform(matrix)
+
+    print(pca.explained_variance_ratio_.cumsum())
