@@ -4,6 +4,7 @@ from Bio import SeqIO
 from pathlib import Path
 from tqdm import tqdm
 from sklearn.decomposition import PCA
+import numpy as np
 
 
 #change to esm2_t48_15B_UR50D() when more power
@@ -39,7 +40,7 @@ for fasta_file in input_dir.glob("*.faa"):
             batch_labels, batch_strs, batch_tokens = batch_converter(batch)
             batch_tokens = batch_tokens.to(device)
 
-            #
+            #set repr_layers for esm2
             results = model(batch_tokens, repr_layers=[33], return_contacts=False)
             attn = results["attentions"]
 
@@ -58,6 +59,7 @@ for fasta_file in input_dir.glob("*.faa"):
 
     labels = list(embeddings.keys())
     matrix = torch.stack([embeddings[label] for label in labels]).numpy()
+    np.save("raw_embedding_matrix.npy", matrix)
 
     pca = PCA(n_components=128)
     pca_result = pca.fit_transform(matrix)
