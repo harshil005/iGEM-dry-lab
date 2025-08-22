@@ -10,7 +10,7 @@ import numpy as np
 #change to esm2_t48_15B_UR50D() when more power
 #handle sequence cap of 1024
 
-model_name = "esm1b_t33_650M_UR50S"
+model_name = "esm2_t48_15B_UR50D()"
 model, alphabet = esm.pretrained.load_model_and_alphabet(model_name)
 batch_converter = alphabet.get_batch_converter()
 model.eval()
